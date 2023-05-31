@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/utilities.css">
+    <link rel="icon" href="../images/logo.svg">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+    <script src="https://kit.fontawesome.com/eaa7bdffa7.js" crossorigin="anonymous"></script>
+    <title>PCThrill</title>
+</head>
+<body id="site">
+
+    <nav>
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+            <i onclick="toggleScroll()" class="fa-solid fa-bars"></i>
+        </label>
+        <label class="logo"><a href="../index.html"><img src="../images/logo.svg" alt=""></a></label>
+        <ul class="dropmenu">
+                <li><a href="../index.html">Hem</a></li>
+                <li><a href="../products.html">Produkter</a></li>
+                <li><a href="../cart.html">Kundvagn</a></li>
+                <li><a href="../contact.html">Support</a></li>
+                <li id="favhide"><a href="../favorites.html" class="toggletab hidetab">Favoriter</a></li>
+                <li><a href="../login.html" id="accountTab"><i class="fa-regular fa-user"></i> Konto</a></li>
+        </ul>
+    </nav>
+
+
+    <img src="" alt="">
+
+    <div class="l-container search-product">
+        <input type="text" id="filterInput" placeholder="Sök i 'Datortillbehör'">
+
+        <ul id="names" class="grid">
+
+            <li class="product grid grid-3" id="product1">
+                <a href="../produkter/logitech_mouse.html">Logitech G Pro X Superlight<br>
+                    <img src="../images/gprodisplay.png" alt="">
+                </a>
+                <div>
+                    <div class="sub">
+                        Art. Nr 829102
+                        <div class="product-desc">
+                            Mus<br>Gaming <br>Logitech<br>
+                        </div>
+                    </div>
+                    <a href="../produkter/logitech_mouse.html">
+                        <div class="btn">
+                            Lägg i kundvagn
+                        </div>
+                    </a>
+                </div>
+                <div class="popular">
+                    Populär
+                </div>
+                
+            </li>
+
+            <li class="product grid grid-3" id="product2">
+                <a href="../produkter/apexprotkl.html">Steelseries Apex Pro TKL <br>
+                    <img src="../images/apexprotkldisplay.png" alt="">
+                </a>
+                <div>
+                    <div class="sub">
+                        Art. Nr 829102
+                        <div class="product-desc">
+                            Steelseries<br>Tangentbord <br>Gaming
+                        </div>
+                    </div>
+                    <a href="../produkter/apexprotkl.html">
+                        <div class="btn">
+                            Lägg i kundvagn
+                        </div>
+                    </a>
+                </div>
+                <div class="popular">
+                    Populär
+                </div>
+                
+                
+            </li>
+
+            <li class="product grid grid-3" id="product3">
+                <a href="#">Finalmouse Starlight Pro <br>
+                    <img src="../images/pro-x3.png" alt="">
+                </a>
+                <div>
+                    <div class="sub">
+                        Art. Nr 829102
+                        <div class="product-desc">
+                            Lorem ipsum<br>Lorem Ipsum <br>Lorem Ipsum<br>Lorem ipsum
+                        </div>
+                    </div>
+                    <div class="btn">
+                        Lägg i kundvagn
+                    </div>
+                </div>
+                
+                
+            </li>
+
+
+        </ul>
+
+        <div id="popup" class="popup">Vi kunde inte hitta produkten du sökte efter</div>
+
+    </div>
+
+    <div class="searchp-swiper">
+        <div class="l-container index-container index-swiper">
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+    
+                    <div class="swiper-slide">
+                        <img src="../images/gprodisplay.png" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="../images/apexprotkldisplay.png" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="../images/apexprotkl2.png" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="../images/gprodisplay.png" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="../images/apexprotkldisplay.png" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="../images/apexprotkl2.png" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="../images/gprodisplay.png" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="../images/apexprotkldisplay.png" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="../images/apexprotkl2.png" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="../images/apexprotkldisplay.png" alt="">
+                    </div>
+                </div>
+                <div class="slider-btns">
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+   
+    <footer>
+        <div class="footer-content">
+            <h3>PCThrill</h3>
+            <p>Beställ och hitta de billigaste produkterna vid högsta kvalité på PCThrill</p>
+            <ul class="socials">
+                <li><a href="https://www.facebook.com/"><i class="fab fa-facebook fa-2x whiteiconcolor"></i></a></li>
+                <li><a href="https://www.instagram.com/"><i class="fab fa-instagram fa-2x whiteiconcolor"></i></a></li>
+                <li><a href="https://twitter.com/"><i class="fab fa-twitter fa-2x whiteiconcolor"></i></a></li>
+                <li><a href="https://www.youtube.com/"><i class="fab fa-youtube fa-2x whiteiconcolor"></i></a></li>
+             </ul>
+             <div class="footer-menu">
+                <ul class="f-menu">
+                   <li><a href="../index.html">Hem</a></li>
+                   <li><a href="../products.html">Produkter</a></li>
+                   <li><a href="../contact.html">Support</a></li>
+                   <li><a href="../login.html">Konto</a></li>
+                </ul>
+               </div>
+        </div>
+    </footer>
+
+</main>
+
+
+    <script src="../script.js"></script>
+    <script src="../js/search.js"></script>
+    <script src="../accountCheck.js"></script>
+    <script src="../js/favorite.js"></script>
+
+    <script  src="https://code.jquery.com/jquery-3.6.3.js"integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script> <!--Js Swipe funktion för artikelbilderna-->
+    <script tpe="text/javascript"> // används för image slidern
+        $('.s-checkbox').on('change', function(){
+    $('.s-checkbox').not(this).prop('checked',false)
+});
+
+var swiper = new Swiper(".mySwiper", {
+      slidesPerView: 1,
+      spaceBetween: 10,
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    
+      breakpoints: {
+        400: { 
+          slidesPerView: 1,
+          spaceBetween: 0,
+        },
+        580: { 
+          slidesPerView: 2,
+          spaceBetween: 0,
+        },
+        870: { 
+          slidesPerView: 3,
+          spaceBetween: 0,
+        },
+        1080: { 
+          slidesPerView: 4,
+          spaceBetween: 0,
+        },
+        1285: { //aktiv innan 1285px screen width
+          slidesPerView: 4,
+          spaceBetween: 0,
+        }
+      
+      },
+    });
+    </script>
+    
+
+</body>
+</html>

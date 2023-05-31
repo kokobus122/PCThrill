@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/utilities.css">
+    <link rel="icon" href="../images/logo.svg">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+    <script src="https://kit.fontawesome.com/eaa7bdffa7.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script> <!-- installerar jquery så att +- countern ska fungera med js -->
+    <title>PCThrill</title>
+</head>
+<body id="site">
+
+    <div class="alert hide">
+        <span class="fas fa-check"></span>
+        <span class="msg">Produkt tillagd i kundvagn</span>
+        <span class="close-btn" onclick="removeAlert()">
+            <span class="fas fa-times"></span>
+        </span>
+    </div>
+
+    <div class="alert2 hide2" id="favError">
+        <span class="fas fa-exclamation-circle"></span>
+        <span class="msg">Kunde inte lägga till produkt i favoriter</span>
+        <span class="close-btn" onclick="removeAlert2()">
+            <span class="fas fa-times"></span>
+        </span>
+    </div>
+
+    <div class="alert3 hide3" id="favAdded">
+        <span class="fas fa-check"></span>
+        <span class="msg">Produkt tillagd i favoriter</span>
+        <span class="close-btn" onclick="removeAlert3()">
+            <span class="fas fa-times"></span>
+        </span>
+    </div>
+
+    <nav>
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+            <i onclick="toggleScroll()" class="fa-solid fa-bars"></i>
+        </label>
+        <label class="logo"><a href="../index.html"><img src="../images/logo.svg" alt=""></a></label>
+        <ul class="dropmenu">
+                <li><a href="../index.html">Hem</a></li>
+                <li><a href="../products.html">Produkter</a></li>
+                <li><a href="../cart.html">Kundvagn</a></li>
+                <li><a href="../contact.html">Support</a></li>
+                <li id="favhide"><a href="../favorites.html" class="toggletab hidetab">Favoriter</a></li>
+                <li><a href="../login.html" id="accountTab"><i class="fa-regular fa-user"></i> Konto</a></li>
+        </ul>
+    </nav>
+
+<div class="mobile product-swiper">
+    <div class="container product-inspect">
+        <div class="grid">
+        </div>
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper iphone-swipe">
+
+                    <div class="swiper-slide">
+                        <img src="../images/router.png" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="../images/router2.png" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="../images/router3.png" alt="">
+                    </div>
+                </div>
+                <div class="slider-btns">
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                </div>
+            </div>
+
+
+            <div class="product-desc">
+                <span class="rub">Router</span><br><span class="desc-title">ASUS</span><br><span class="desc-title2">4G-AC86U</span>
+            </div>
+            <div class="inspect3">
+                <div class="item-price">2095:-</div>
+                <div class="item-sale">Delbetala 95:-/mån</div>
+                <div class="grid-inspect">
+                    <div class="btn alertBtn" onclick="addProduct7(); alertNoti()">Lägg i kundvagn</div>
+                    <div class='main'>
+                        <div class="input-group plus-minus-input">
+                            <input class="input-group-field" id="inputNumb" type="number" name="quantity" value="1">
+                        </div>
+                    </div>
+                    <div class="favorite" onclick="addFavorite7();">
+                        <a href="javascript:void(0)">
+                            <i id="favorite" class="fa-regular fa-heart fa-lg"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="main2">
+                <button class="accordion">Beskrivning</button>
+                <div class="panel">
+                    <p class="line">ASUS 4G-AC86U erbjuder oöverträffad användarvänlighet. Långsiktiga tester garanterar bred kompatibilitet och tillförlitlighet. Sätt bara i ett SIM-kort och njut av bekvämligheten med mobil 3G/4G-bredbandsanslutning och färre sladdar var som helst för hemmet och företaget.</p>
+                </div>
+
+                <button class="accordion">Specifikationer</button>
+                <div class="panel">
+                    <p class="line"><b>Allmänt</b> <br>
+                        Tillverkare ASUS<br>
+                        Modell 4G-AC86U<br>
+                        Produkttyp Trådlös router<br>
+                        Modem Typ Trådlöst mobilmodem<br>
+                        Cellulärt protokoll<br>
+                        FDD LTE, HSPA+, LTE, TDD LTE<br>
+                        Max överföringshastighet 600 Mbps<br>
+                        <b>Nätverk</b><br>
+                        Trådlösa standarder<br>
+                        802.11a/b/g/n/ac<br>
+                        WiFi-frekvensband 2,4 GHz/5GHz<br>
+                        WiFi AC-gradering AC2600</p>
+                </div>
+
+                <button class="accordion b-bottom">Recensioner (0)</button>
+                <div class="panel">
+                    <p>&nbsp;</p>
+                </div>
+            </div>
+    </div>
+</div>
+
+<div class="filler"></div>
+
+<!-- kundvagn produkt template -->
+<div class="hidden1">
+    <div class="product product7 grid grid-product" id="product7">
+        <img src="images/routerdisplay.png" alt="">
+        <span class="title-head"></span>
+        <div class="title">
+            <span>ASUS Router 4G-AC86U</span><br>
+            <span class="sub sub2">Art. Nummer 2918201</span> <br>
+            <span class="sub remove" onclick="sessionStorage.removeItem('productContent7'); location.reload();"><i class="fa fa-trash" aria-hidden="true"></i> Remove</span> 
+            <!--Med hjälp av onclick så tar jag bort produkten från sessionstorage och reloadar sidan så att den tas bort från kundvagnen. -->
+        </div>
+        <div class="price">
+            <span class="title-head">Pris</span>
+            <span class="product-price">2095</span>
+        </div>
+        <div class="amount">
+            <span class="title-head">Antal</span>
+            <span class="amounts" id="amountProduct">1</span>
+        </div>
+        <div class="total">
+            <span class="title-head">Totalt</span>
+            <span class="total-price"></span>
+        </div>
+    </div>
+</div>
+
+<!-- favorit produkt template -->
+<div class="hidden1">
+    <div class="product product7 grid grid-product" id="favorite7">
+        <img src="images/routerdisplay.png" alt="">
+        <span class="title-head2"></span>
+        <div class="title">
+            <span>ASUS Router 4G-AC86U</span><br>
+            <span class="sub sub2">Art. Nummer 2918201</span><br>
+            <span class="sub remove big" onclick="sessionStorage.removeItem('favoriteProduct7'); location.reload();"><i class="fa fa-trash" aria-hidden="true"></i> Remove</span>
+        </div>
+        <div class="price">
+            <span class="title-head2">Pris</span>
+            <span class="product-price">2095 kr</span>
+        </div>
+        <div class="amount">
+            <span class="title-head2">Antal</span>
+            <span>1</span>
+        </div>
+        <div class="total">
+            <span class="title-head2">Totalt</span>
+            <span class="total-price">2095kr</span>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<footer>
+    <div class="footer-content">
+        <h3>PCThrill</h3>
+        <p>Beställ och hitta de billigaste produkterna vid högsta kvalité på PCThrill</p>
+        <ul class="socials">
+            <li><a href="https://www.facebook.com/"><i class="fab fa-facebook fa-2x whiteiconcolor"></i></a></li>
+            <li><a href="https://www.instagram.com/"><i class="fab fa-instagram fa-2x whiteiconcolor"></i></a></li>
+            <li><a href="https://twitter.com/"><i class="fab fa-twitter fa-2x whiteiconcolor"></i></a></li>
+            <li><a href="https://www.youtube.com/"><i class="fab fa-youtube fa-2x whiteiconcolor"></i></a></li>
+         </ul>
+         <div class="footer-menu">
+            <ul class="f-menu">
+               <li><a href="../index.html">Hem</a></li>
+               <li><a href="../products.html">Produkter</a></li>
+               <li><a href="../contact.html">Support</a></li>
+               <li><a href="../login.html">Konto</a></li>
+            </ul>
+           </div>
+    </div>
+</footer>
+
+
+    <script src="../script.js" type="text/javascript"></script>
+    <script  src="https://code.jquery.com/jquery-3.6.3.js"integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script> <!--Js Swipe funktion för artikelbilderna-->
+    <script src="../js/accordion.js"></script>
+
+    <script tpe="text/javascript"> // används för image slidern
+        $('.s-checkbox').on('change', function(){
+    $('.s-checkbox').not(this).prop('checked',false)
+});
+
+var swiper = new Swiper(".mySwiper", {
+      slidesPerView: 1,
+      spaceBetween: 10,
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    
+      breakpoints: {
+        450: { //aktiveras från 820px till 450px
+          slidesPerView: 1,
+          spaceBetween: 0,
+        },
+        768: { //aktiveras från 1024px till 820px
+          slidesPerView: 2,
+          spaceBetween: 0,
+        },
+        1150: { //aktiv innan 1024px screen width
+          slidesPerView: 3,
+          spaceBetween: 0,
+        }
+      
+      },
+    });
+    </script>
+
+    <script type="text/javascript">
+        function addProduct7(){
+            const productContent = document.querySelector("#product7").outerHTML;
+            sessionStorage.setItem("productContent7", productContent);
+            console.log("Product7 added")
+        }
+
+        function addFavorite7(){
+            if(sessionStorage.getItem("accountLogin") === null){
+                var ele = document.getElementById("favError")
+                ele.classList.remove("hide2");
+            } else {
+                const favoriteProduct = document.querySelector("#favorite7").outerHTML;
+                sessionStorage.setItem("favoriteProduct7", favoriteProduct);
+                var elem = document.getElementById("favAdded")
+                elem.classList.remove("hide3");
+                console.log("Favorite7 added");
+            }
+        }
+    </script>
+
+<script type="text/javascript">
+    const input = document.getElementById('inputNumb');
+    const amount = document.getElementById('amountProduct');
+
+    input.addEventListener('input', function() {
+        const value = input.value;
+        amount.textContent = value;
+    })
+
+    if (amount == ""){
+        amount.textContent = 1;
+    }
+</script>
+
+
+    <script type="text/javascript"> // används för input countern
+        jQuery(document).ready(function(){
+    // This button will increment the value
+    $('[data-quantity="plus"]').click(function(e){
+        // Stop acting like a button
+        e.preventDefault();
+        // Get the field name
+        fieldName = $(this).attr('data-field');
+        // Get its current value
+        var currentVal = parseInt($('input[name='+fieldName+']').val());
+        // If is not undefined
+        if (!isNaN(currentVal)) {
+            // Increment
+            $('input[name='+fieldName+']').val(currentVal + 1);
+        } else {
+            // Otherwise put a 1 there
+            $('input[name='+fieldName+']').val(1);
+        }
+    });
+    // This button will decrement the value till 0
+    $('[data-quantity="minus"]').click(function(e) {
+        // Stop acting like a button
+        e.preventDefault();
+        // Get the field name
+        fieldName = $(this).attr('data-field');
+        // Get its current value
+        var currentVal = parseInt($('input[name='+fieldName+']').val());
+        // If it isn't undefined or its greater than 0
+        if (!isNaN(currentVal) && currentVal > 0) {
+            // Decrement one
+            $('input[name='+fieldName+']').val(currentVal - 1);
+        } else {
+            // Otherwise put a 1 there
+            $('input[name='+fieldName+']').val(1);
+        }
+    });
+});
+    </script>
+
+    <script>
+        function alertNoti(){
+            $('.alert').removeClass("hide");
+            $('alert').addClass("show");
+        };
+        function removeAlert(){
+            $('.alert').addClass("hide");
+            $('alert').removeClass("show");
+        }
+        function removeAlert2(){
+            $('.alert2').addClass("hide2");
+        }
+        function removeAlert3(){
+            $('.alert3').addClass("hide3");
+        }
+    </script>
+    <script src="../accountCheck.js"></script>
+    <script src="../js/favorite.js"></script>
+
+</body>
+</html>

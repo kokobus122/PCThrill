@@ -1,0 +1,11 @@
+@media (min-width: 768px) {
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  .login-container {
+    max-width: 500px;
+  }
+}/*# sourceMappingURL=flex.css.map */
