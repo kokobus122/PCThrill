@@ -27,7 +27,7 @@
         <div class="login">
             <div class="login-header">
                 <h1>
-                    <a href="index.html"><img src="images/logo.svg" alt=""></a>
+                    <a href="https://kokobus122.github.io/PCThrill"><img src="images/logo.svg" alt=""></a>
                 </h1>
             </div>
             <div class="box">
@@ -40,8 +40,8 @@
                 <input type="text" name="password2" id="password2">
                 <a href="#" id="confirm" onclick="changePassword();"><div class="login-btn">Byt lösenord</div></a>
                 <hr>
-                <a href="index.html" id="logout" onclick="logOut();"><div class="register-btn">Logga ut</div></a>
-                <a href="index.html"><div class="register-btn">Tillbaka till PCThrill</div></a>
+                <a href="https://kokobus122.github.io/PCThrill" id="logout" onclick="logOut();"><div class="register-btn">Logga ut</div></a>
+                <a href="https://kokobus122.github.io/PCThrill"><div class="register-btn">Tillbaka till PCThrill</div></a>
             </div>
         </div>
     </div>
@@ -61,7 +61,7 @@
         function changePassword(){
             if (document.getElementById("password").value === document.getElementById("password2").value && document.getElementById("password").value !== ""){
                 sessionStorage.setItem("password", document.getElementById("password").value);
-                window.location.href = "index.html";
+                window.location.href = "https://kokobus122.github.io/PCThrill";
             } else {
                 var errorNoti = document.getElementById("errorAlert");
                 errorNoti.classList.remove("hide");
