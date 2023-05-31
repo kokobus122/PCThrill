@@ -829,7 +829,7 @@ article{
   }
 }
 
-.art3{
+.art2{
   min-height: 150px;
   .grid{
     li{
@@ -1164,7 +1164,6 @@ article{
       color: #444;
       cursor: pointer;
       padding: 18px;
-      width: 50%;
       border-top: 2px solid lightgrey;
       border-bottom: none;
       border-left: 2px solid lightgrey;
@@ -1187,7 +1186,6 @@ article{
     display: none;
     background-color: #eee;
     overflow: hidden;
-    width: 50%;
   }
 }
 
@@ -1269,11 +1267,6 @@ article{
       background-color: #eee;
       overflow: hidden;
     }
-  }
-  .grid-inspect{
-    display: grid;
-    grid-template-columns: 200px 120px 70px;
-    height: 100%;
   }
   .main{
     align-items: center;
@@ -1716,12 +1709,41 @@ nav{
 
 /* Tablets & under */
 @media (max-width: 768px){
-    .vertical, .questions .grid, .cart-items .grid-third, .banner .grid, .cart-products .grid-third, .payments .grid-third, .contact-form .grid-3, .contacts .grid-third, .display-cards .grid1{ // gör grid till 1kolumn för lättare visning på mobil display
+    .vertical, .questions .grid, .cart-items .grid-third, .banner .grid, .cart-products .grid-third, .payments .grid-third, .contact-form .grid-3, .contacts .grid-third, .display-cards .grid1, .categories .grid, .contact .grid{ // gör grid till 1kolumn för lättare visning på mobil display
       grid-template-columns: 1fr;
       grid-template-rows: 1fr;
     }
+    .contact-form .pc{
+       display: none; // gömmer texterna för en mer simpel design på mobil displays
+    }
     .cart-products .sub2{ // mer simplistisk design i varukorgen för mindre displays
       display: none;
+    }
+    .accordion, .panel{ // visa hela accordionen på mobil displays
+      width: 100%;
+    }
+    .checkout-method img{ // samma som ovan
+      padding-right: 10px;
+    }
+    .delivery-info{
+      font-size: 0.8rem;
+    }
+    .login{
+      input:not([type='checkbox']){
+        width: 340px;
+      }
+    }
+    .product-card{
+      .product-desc{
+        font-size: 0.9rem;
+        span{
+          font-size: 0.75rem;
+        }
+      }
+      .item-price{
+        font-size: 1rem;
+        line-height: 3rem;
+      }
     }
 
     .front .grid{
@@ -1749,6 +1771,9 @@ nav{
   .checkout-method .price-sum{ // samma som ovan
     transform: translateY(-600%);
   }
+  .contact-form .mobile{
+    display: none;
+  }
   .art3 .grid{
     min-width: 1400px;
   }
@@ -1756,6 +1781,9 @@ nav{
     position: absolute;
     bottom: 0;
     width: 100%;
+  }
+  .accordion, .panel{ // visa halva accordionen på större displays
+    width: 50%;
   }
 }
 
@@ -1777,6 +1805,32 @@ nav{
 @media (max-width: 1400px){
   .product-titles .title-head{
     display: none;
+  }
+}
+
+@media (min-width: 500px){
+  .grid-inspect{
+    display: grid;
+    grid-template-columns: 200px 120px 70px;
+    height: 100%;
+  }
+}
+
+@media (max-width: 500px){
+  .product{
+    .title-head{
+      display: none;
+    }
+  }
+  .grid-inspect{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    height: 100%;
+    .btn{
+      max-height: 46px;
+      font-size: 1rem;
+    }
   }
 }
 
