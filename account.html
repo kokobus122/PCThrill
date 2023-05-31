@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/utilities.css">
+    <link rel="stylesheet" href="css/bg.css">
+    <link rel="stylesheet" href="css/flex.css">
+    <link rel="icon" href="images/logo.svg">
+    <script src="https://kit.fontawesome.com/eaa7bdffa7.js" crossorigin="anonymous"></script>
+    <title>PCThrill</title>
+</head>
+<body>
+
+    <div class="alert2 hide" id="errorAlert">
+        <span class="fas fa-exclamation-circle"></span>
+        <span class="msg">Kunde inte byta lösenord</span>
+        <span class="close-btn" onclick="removeAlert()">
+            <span class="fas fa-times"></span>
+        </span>
+    </div>
+
+
+    <div class="login-container">
+        <div class="login">
+            <div class="login-header">
+                <h1>
+                    <a href="index.html"><img src="images/logo.svg" alt=""></a>
+                </h1>
+            </div>
+            <div class="box">
+                <h1 class="title">Mitt konto</h1>
+                <label for="mail">Nuvarande Mail</label><br>
+                <input class="mail" type="text" name="mail" id="mail" disabled><br>
+                <label for="password">Nytt lösenord</label><br>
+                <input type="text" name="password" id="password"><br>
+                <label for="password">Bekräfta lösenord</label><br>
+                <input type="text" name="password2" id="password2">
+                <a href="#" id="confirm" onclick="changePassword();"><div class="login-btn">Byt lösenord</div></a>
+                <hr>
+                <a href="index.html" id="logout" onclick="logOut();"><div class="register-btn">Logga ut</div></a>
+                <a href="index.html"><div class="register-btn">Tillbaka till PCThrill</div></a>
+            </div>
+        </div>
+    </div>
+
+
+
+</main>
+
+
+    <script src="script.js"></script>
+
+    <script type="text/javascript">
+        function logOut(){
+            sessionStorage.removeItem("accountLogin");
+        }
+
+        function changePassword(){
+            if (document.getElementById("password").value === document.getElementById("password2").value && document.getElementById("password").value !== ""){
+                sessionStorage.setItem("password", document.getElementById("password").value);
+                window.location.href = "index.html";
+            } else {
+                var errorNoti = document.getElementById("errorAlert");
+                errorNoti.classList.remove("hide");
+            }
+        }
+
+        document.getElementById("mail").value = sessionStorage.getItem("mail");
+
+        function removeAlert(){
+            var errorNoti = document.getElementById("errorAlert");
+
+            errorNoti.classList.add("hide");
+            errorNoti.classList.remove("show");
+        }
+    </script>
+    
+
+</body>
+</html>

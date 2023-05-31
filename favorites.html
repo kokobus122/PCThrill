@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/utilities.css">
+    <link rel="stylesheet" href="css/bg.css">
+    <link rel="icon" href="images/logo.svg">
+    <script src="https://kit.fontawesome.com/eaa7bdffa7.js" crossorigin="anonymous"></script>
+    <title>PCThrill</title>
+</head>
+<body>
+
+    <nav>
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+            <i onclick="toggleScroll()" class="fa-solid fa-bars"></i>
+        </label>
+        <label class="logo"><a href="index.html"><img src="images/logo.svg" alt=""></a></label>
+        <ul class="dropmenu">
+                <li><a href="index.html">Hem</a></li>
+                <li><a href="products.html">Produkter</a></li>
+                <li><a href="cart.html">Kundvagn</a></li>
+                <li><a href="contact.html">Support</a></li>
+                <li id="favhide"><a href="favorites.html" class="toggletab hidetab">Favoriter</a></li>
+                <li><a href="login.html" id="accountTab"><i class="fa-regular fa-user"></i> Konto</a></li>
+        </ul>
+    </nav>
+
+    <div class="alert hide">
+        <span class="fas fa-check"></span>
+        <span class="msg">Produkt tillagd i kundvagn</span>
+        <span class="close-btn" onclick="removeAlert()">
+            <span class="fas fa-times"></span>
+        </span>
+    </div>
+
+    <div class="l-container">
+        <div class="favorites">
+            <div class="text favorites-header"><i class="fa-regular fa-heart"></i> Favorit produkter</div>
+            <div class="l-container cart-products">
+                <div>
+                    <div class="products" id="products">
+                        <div class="product product1 grid grid-product">
+                            <img src="images/headphones.png" alt="">
+                            <span class="title-head2">Du har 1 vara i din favoritlista</span>
+                            <div class="title">
+                                <span>Logitech Headphones</span><br>
+                                <span class="sub sub2">Art. Nummer 2918201</span><br>
+                                <span class="sub remove big" onclick="sessionStorage.removeItem('productContent2'); location.reload();"><i class="fa fa-trash" aria-hidden="true"></i> Remove</span>
+                            </div>
+                            <div class="price">
+                                <span class="title-head2">Pris</span>
+                                <span class="product-price">50 kr</span>
+                            </div>
+                            <div class="amount">
+                                <span class="title-head2">Antal</span>
+                                <span>1</span>
+                                <span class="sub remove small" onclick="sessionStorage.removeItem('productContent2'); location.reload();"><i class="fa fa-trash" aria-hidden="true"></i> Remove</span>
+                            </div>
+                            <div class="total">
+                                <span class="title-head2">Totalt</span>
+                                <span class="total-price">50kr</span>
+                            </div>
+                            <div class="item-btn">
+                                Lägg i kundvagn
+                            </div>
+                        </div>
+        
+                        <div class="product product2 grid grid-product">
+                            <img src="images/headphones.png" alt="">
+                            <span class="title-head2">Du har 1 vara i din favoritlista</span>
+                            <div class="title">
+                                <span>Logitech G Pro X Superlight</span><br>
+                                <span class="sub sub2">Art. Nummer 2918201</span><br>
+                                <span class="sub remove big" onclick="sessionStorage.removeItem('productContent2'); location.reload();"><i class="fa fa-trash" aria-hidden="true"></i> Remove</span>
+                            </div>
+                            <div class="price">
+                                <span class="title-head2">Pris</span>
+                                <span class="product-price">50 kr</span>
+                            </div>
+                            <div class="amount">
+                                <span class="title-head2">Antal</span>
+                                <span>1</span>
+                                <span class="sub remove small" onclick="sessionStorage.removeItem('productContent2'); location.reload();"><i class="fa fa-trash" aria-hidden="true"></i> Remove</span>
+                            </div>
+                            <div class="total">
+                                <span class="title-head2">Totalt</span>
+                                <span class="total-price">50kr</span>
+                            </div>
+                            <div class="item-btn">
+                                Lägg i kundvagn
+                            </div>
+                        </div>
+
+                    </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="filler2"></div>
+    
+
+
+
+
+    <footer>
+        <div class="footer-content">
+            <h3>PCThrill</h3>
+            <p>Beställ och hitta de billigaste produkterna vid högsta kvalité på PCThrill</p>
+            <ul class="socials">
+                <li><a href="https://www.facebook.com/"><i class="fab fa-facebook fa-2x whiteiconcolor"></i></a></li>
+                <li><a href="https://www.instagram.com/"><i class="fab fa-instagram fa-2x whiteiconcolor"></i></a></li>
+                <li><a href="https://twitter.com/"><i class="fab fa-twitter fa-2x whiteiconcolor"></i></a></li>
+                <li><a href="https://www.youtube.com/"><i class="fab fa-youtube fa-2x whiteiconcolor"></i></a></li>
+             </ul>
+             <div class="footer-menu">
+                <ul class="f-menu">
+                   <li><a href="index.html">Hem</a></li>
+                   <li><a href="products.html">Produkter</a></li>
+                   <li><a href="contact.html">Support</a></li>
+                   <li><a href="login.html">Konto</a></li>
+                </ul>
+               </div>
+        </div>
+    </footer>
+
+</main>
+
+
+    <script src="script.js"></script>
+    <script src="accountCheck.js"></script>
+
+    <script type="text/javascript">
+        const favoriteProduct = sessionStorage.getItem("favoriteProduct1");
+        const favoriteProduct2 = sessionStorage.getItem("favoriteProduct2");
+        const favoriteProduct3 = sessionStorage.getItem("favoriteProduct3");
+        const favoriteProduct4 = sessionStorage.getItem("favoriteProduct4");
+        const favoriteProduct5 = sessionStorage.getItem("favoriteProduct5");
+        const favoriteProduct6 = sessionStorage.getItem("favoriteProduct6");
+        const favoriteProduct7 = sessionStorage.getItem("favoriteProduct7");
+        const favoriteProduct8 = sessionStorage.getItem("favoriteProduct8");
+
+        const container = document.querySelector("#products");
+
+        container.innerHTML = favoriteProduct + favoriteProduct2 + favoriteProduct3 + favoriteProduct4 + favoriteProduct5 + favoriteProduct6 + favoriteProduct7 + favoriteProduct8
+    </script>
+
+    <script type="text/javascript">
+        var containRem = document.getElementById("products");
+        containRem.innerHTML = containRem.innerHTML.replace(/null/g, ""); // tar bort alla "null" texter
+        containRem.innerHTML = containRem.innerHTML.replace("0", ""); // tar bort alla 0'or som egentligen är existerande productContents som inte visas
+    </script>
+
+    
+
+</body>
+</html>

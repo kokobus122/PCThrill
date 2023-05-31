@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/utilities.css">
+    <link rel="stylesheet" href="css/bg.css">
+    <link rel="stylesheet" href="css/flex.css">
+    <link rel="icon" href="images/logo.svg">
+    <script src="https://kit.fontawesome.com/eaa7bdffa7.js" crossorigin="anonymous"></script>
+    <title>PCThrill</title>
+</head>
+<body>
+
+    <div class="alert2 hide" id="errorAlert">
+        <span class="fas fa-exclamation-circle"></span>
+        <span class="msg">Kontouppgifterna överensstämmer inte</span>
+        <span class="close-btn" onclick="removeAlert()">
+            <span class="fas fa-times"></span>
+        </span>
+    </div>
+
+
+    <div class="login-container">
+        <div class="login">
+            <div class="login-header">
+                <h1>
+                    <a href="index.html"><img src="images/logo.svg" alt=""></a>
+                </h1>
+            </div>
+            <div class="box">
+                <h1 class="title">Logga in</h1>
+                <label for="mail">Mailadress</label><br>
+                <input class="" type="text" name="mail" id="mail"><br>
+                <label for="password">Lösenord</label><br>
+                <input type="text" name="password" id="password">
+                <div class="remember">
+                    <input type="checkbox" name="remember">
+                    <label for="remember">Kom ihåg mig</label>
+                </div>
+                <a href="#" id="loginSend" onclick="loginAttempt();"><div class="login-btn">Logga in</div></a>
+                <hr>
+                <h1 class="title">Registrera dig</h1>
+                <a href="register.html" id="reg"><div class="register-btn">Skapa konto</div></a>
+            </div>
+        </div>
+    </div>
+
+
+
+</main>
+
+
+    <script src="script.js"></script>
+
+    <script type="text/javascript">
+        window.onload = function registerAttempt(){
+            if(sessionStorage.getItem("account") === null){
+                return;
+            } else {
+                // document.getElementById("reg").style.pointerEvents = "none";
+                return;
+            }
+        }
+
+        function loginAttempt(){
+            var accountMail = document.getElementById("mail").value;
+            var accountPassword = document.getElementById("password").value;
+            var errorNoti = document.getElementById("errorAlert");
+
+            if(accountMail === sessionStorage.getItem("mail") && accountPassword === sessionStorage.getItem("password")){
+                sessionStorage.setItem("accountLogin", "existingLogin");
+                window.location.href = "index.html";
+            } else {
+                errorNoti.classList.remove("hide");
+            }
+        }
+
+        function removeAlert(){
+            var errorNoti = document.getElementById("errorAlert");
+
+            errorNoti.classList.add("hide");
+            errorNoti.classList.remove("show");
+        }
+    </script>
+    
+
+</body>
+</html>

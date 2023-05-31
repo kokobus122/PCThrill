@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/utilities.css">
+    <link rel="stylesheet" href="css/bg.css">
+    <link rel="icon" href="images/logo.svg">
+    <script src="https://kit.fontawesome.com/eaa7bdffa7.js" crossorigin="anonymous"></script>
+    <title>PCThrill</title>
+</head>
+<body id="site">
+
+    <nav>
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+            <i onclick="toggleScroll()" class="fa-solid fa-bars"></i>
+        </label>
+        <label class="logo"><a href="index.html"><img src="images/logo.svg" alt=""></a></label>
+        <ul class="dropmenu">
+                <li><a href="index.html">Hem</a></li>
+                <li><a href="products.html">Produkter</a></li>
+                <li><a href="cart.html">Kundvagn</a></li>
+                <li><a href="contact.html">Support</a></li>
+                <li id="favhide"><a href="favorites.html" class="toggletab hidetab">Favoriter</a></li>
+                <li><a href="login.html" id="accountTab"><i class="fa-regular fa-user"></i> Konto</a></li>
+        </ul>
+    </nav>
+
+    <div class="alert2 hide" id="errorAlert">
+        <span class="fas fa-exclamation-circle"></span>
+        <span class="msg">Ogiltig Mailadress</span>
+        <span class="close-btn" onclick="removeAlert()">
+            <span class="fas fa-times"></span>
+        </span>
+    </div>
+
+    <article>
+        <div class="cart-header p-1 l-container">
+            <div class="text">Betalsätt</div>
+            <img src="../images/creditcard.svg" alt="" class="toggle-element">
+        </div>
+    </article>
+
+    <div class="checkout-method">
+        <div class="l-container payments">
+            <div class="grid-third grid">
+                <div class="products" id="products">
+                    <div class="product grid">
+                        <div class="title">
+                            <input type="checkbox" name="" id="card" onclick="enableCardPayment();">
+                            <span>Kort</span>
+                        </div>
+                        <img src="images/mastercard.png" alt="">
+                    </div>
+    
+    
+                    <div class="product grid">
+                        <div class="title">
+                            <input type="checkbox" name="" id="klarna" onclick="addMethod3()">
+                            <span>Klarna</span>
+                        </div>
+                        <img src="images/klarna-payment-ny-logga-juni-2019.png" alt="">
+                    </div>
+
+                    <div class="product grid">
+                        <div class="title">
+                            <input type="checkbox" name="" id="paypal" onclick="addMethod2();">
+                            <span>PayPal</span>
+                        </div>
+                        <img src="images/paypal.svg" alt="">
+                    </div>
+                </div>
+                
+
+                <div class="price-sum" id="priceSum">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <article>
+        <div class="cart-header p-1 l-container">
+            <div class="text">Leveranssätt</div>
+            <img src="../images/truck.svg" alt="">
+        </div>
+    </article>
+
+    <div class="l-container delivery">
+        <div class="border">
+            <div class="box">
+                <img src="../images/truck.svg" alt="">
+                <span>Leveranssätt</span>
+                <img src="../images/bring.png" alt=""><br>
+                <input type="checkbox">
+            </div>
+            <div class="zip-form">Postkod</div>
+            <input id="zip" name="zip" type="number">
+            <div class="grid grid-3">
+                <div class="delivery-option">Express</div>
+                <div class="delivery-option">Express</div>
+                <div class="delivery-option">Standard</div>
+            </div>
+            <div class="grid grid-3">
+                <div class="delivery-info">Tid 11-23 <br> 2 Arbetsdagar <div class="delivery-price">149:-</div></div>
+                <div class="delivery-info">Tid 11-23 <br> 2 Arbetsdagar <div class="delivery-price">149:-</div></div>
+                <div class="delivery-info">Tid 11-23 <br> 2 Arbetsdagar <div class="delivery-price">149:-</div></div>
+            </div>
+        </div>
+        <div class="border2">
+            <div class="box">
+                <img src="../images/store.svg" alt="">
+                <span>Pick-up</span>
+                <input type="checkbox">
+            </div>
+        </div>
+    </div>
+
+    <article>
+        <div class="cart-header p-1 l-container">
+            <div class="text">Kunduppgifter</div>
+            <img src="../images/person.svg" alt="" class="person">
+        </div>
+    </article>
+
+    <div class="contacts cards">
+        <div class="l-container contact grid grid-third">
+            <section class="contact-form">
+                <div class="box grid">
+                    <label for="name">Förnamn</label>
+                    <label for="name">Efternamn</label>
+                    <input class="" type="text" name="name" placeholder="Förnamn">
+                    <input class="" type="text" name="surname" placeholder="Efternamn">
+                </div>
+                <div class="box grid grid-1">
+                    <label for="adress">Adress</label>
+                    <input class="" type="text" name="adress" placeholder="Adress">
+                </div>
+                <div class="box grid">
+                    <label for="postnummer">Postnummer</label>
+                    <label for="ort">Ort</label>
+                    <input class="" type="text" name="postnummer" placeholder="Postnummer">
+                    <input class="" type="text" name="ort" placeholder="Ort">
+                    <label for="telephone">Mobilnummer</label>
+                    <label for="mail">Mailadress</label>
+                    <input class="" type="number" name="telephone" placeholder="Mobilnummer">
+                    <input class="" type="text" name="mail" placeholder="Email (example@example.com)" id="mail">
+                </div>
+                <div class="box grid cardpayment hidee" id="cardBox">
+                    <h3>Kortbetalning</h3><br>
+                    <label for="kortnamn">Kortnamn</label>
+                    <label for="kortnummer">Kortnummer</label>
+                    <input class="" type="text" name="kortnamn" placeholder="Benny Karlsson">
+                    <input class="" type="number" name="kortnummer" placeholder="1111-2222-3333-4444" max="19" maxlength="19">
+                    <label for="giltighetstid">Giltighetstid</label>
+                    <label for="cvv">CVV</label>
+                    <input class="" type="number" name="giltighetstid" placeholder="03/18" max="4">
+                    <input class="" type="number" name="cvv" placeholder="578" max="3">
+                </div>
+                <button class="btn btn-primary" type="submit" name="submit" onclick="submit();" id="confirm">
+                    Betala
+                </button>
+                <button class="hidee paypal-btn" type="submit" name="submit" onclick="submit();" id="paypal-btn">
+                    <img src="images/paypaltransparent.png" alt="">
+                </button>
+            </section>
+    
+            <div class="summary">
+                <div class="price-sum" id="priceSum2">
+                        
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <footer>
+        <div class="footer-content">
+            <h3>PCThrill</h3>
+            <p>Beställ och hitta de billigaste produkterna vid högsta kvalité på PCThrill</p>
+            <ul class="socials">
+                <li><a href="https://www.facebook.com/"><i class="fab fa-facebook fa-2x whiteiconcolor"></i></a></li>
+                <li><a href="https://www.instagram.com/"><i class="fab fa-instagram fa-2x whiteiconcolor"></i></a></li>
+                <li><a href="https://twitter.com/"><i class="fab fa-twitter fa-2x whiteiconcolor"></i></a></li>
+                <li><a href="https://www.youtube.com/"><i class="fab fa-youtube fa-2x whiteiconcolor"></i></a></li>
+             </ul>
+             <div class="footer-menu">
+                <ul class="f-menu">
+                   <li><a href="index.html">Hem</a></li>
+                   <li><a href="products.html">Produkter</a></li>
+                   <li><a href="contact.html">Support</a></li>
+                   <li><a href="login.html">Konto</a></li>
+                </ul>
+               </div>
+        </div>
+    </footer>
+
+</main>
+
+
+    <script src="script.js"></script>
+    <script src="js/objHide.js"></script>
+
+    <script type="text/javascript"> // js för att räkna ut pris summan
+        const total = parseInt(sessionStorage.getItem("total")); // använder sessionstorage för att ladda in summan från cart.html
+        priceSum.innerHTML = `Totalt: ${total} kr`;
+
+        
+    </script>
+
+    <script type="text/javascript"> // kopierar texten från första summan och kopierar in den till den andra total rutan i slutet
+        firstTotalSum = document.getElementById('priceSum');
+        secondTotalSum = document.getElementById('priceSum2');
+
+        secondTotalSum.innerHTML = firstTotalSum.innerHTML;
+
+        function addMethod2() {
+            secondTotalSum.innerHTML += '<br>PayPal';
+            var paypalBtn = document.getElementById("paypal-btn");
+            var normalBtn = document.getElementById("confirm");
+            normalBtn.classList.add("hidee");
+            paypalBtn.classList.remove("hidee");
+            document.getElementById("paypal").onclick = null;
+        }
+
+        function addMethod3() {
+            secondTotalSum.innerHTML += '<br>Klarna';
+            document.getElementById("klarna").onclick = null;
+        }
+
+        function enableCardPayment() {
+            const card = document.getElementById("cardBox");
+            card.classList.toggle("hidee");
+            secondTotalSum.innerHTML += '<br>Kort';
+            document.getElementById("card").onclick = null;
+        }
+    </script>
+
+    <script type="text/javascript">
+        let input = sessionStorage.getItem('input');
+        var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/; // mail validation som följer standard formatet för mail
+
+        function submit(){
+            input = document.getElementById("mail").value;
+            var errorNoti = document.getElementById("errorAlert");
+
+            if (input === ""){
+                errorNoti.classList.remove("hide");
+            } else if (input.match(mailformat)){
+                sessionStorage.setItem('mail', input);
+                window.location.href = "confirmation.html"
+            } else {
+                errorNoti.classList.remove("hide");
+            }
+        }
+
+        function removeAlert(){
+            var errorNoti = document.getElementById("errorAlert");
+            errorNoti.classList.add("hide");
+            errorNoti.classList.remove("show");
+        }
+
+    </script>
+
+<script src="accountCheck.js"></script>
+
+
+
+    
+
+</body>
+</html>

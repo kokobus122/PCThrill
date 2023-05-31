@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/utilities.css">
+    <link rel="stylesheet" href="css/bg.css">
+    <link rel="icon" href="images/logo.svg">
+    <script src="https://kit.fontawesome.com/eaa7bdffa7.js" crossorigin="anonymous"></script>
+    <title>PCThrill</title>
+</head>
+<body id="site">
+
+    <nav>
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+            <i onclick="toggleScroll()" class="fa-solid fa-bars"></i>
+        </label>
+        <label class="logo"><a href="index.html"><img src="images/logo.svg" alt=""></a></label>
+        <ul class="dropmenu">
+                <li><a href="index.html">Hem</a></li>
+                <li><a href="products.html">Produkter</a></li>
+                <li><a href="cart.html">Kundvagn</a></li>
+                <li><a href="contact.html">Support</a></li>
+                <li id="favhide"><a href="favorites.html" class="toggletab hidetab">Favoriter</a></li>
+                <li><a href="login.html" id="accountTab"><i class="fa-regular fa-user"></i> Konto</a></li>
+        </ul>
+    </nav>
+
+    <article>
+        <div class="cart-header p-05 l-container">
+            <div class="text">Varukorg</div>
+            <img src="images/cart.png" alt="">
+        </div>
+    </article>
+
+    <div class="product-titles">
+        <span class="title-head" id="amountTitle"></span>
+    </div>
+
+    <div class="l-container cart-products">
+        <div class="grid-third">
+            <div class="products" id="products">
+                <div class="product product1 grid grid-product"> <!-- placeholder -->
+                    <img src="images/headphones.png" alt="">
+                    <span class="title-head">Du har 1 vara i din kundvagn</span>
+                    <div class="title">
+                        <span>Logitech G Pro X Superlight</span>
+                        <span class="sub">Art. Nummer 2918201</span>
+                    </div>
+                    <div class="price">
+                        <span class="title-head">Pris</span>
+                        <span class="product-price">50 kr</span>
+                    </div>
+                    <div class="amount">
+                        <span class="title-head">Antal</span>
+                        <span>1</span>
+                    </div>
+                    <div class="total">
+                        <span class="title-head">Totalt</span>
+                        <span class="total-price">50kr</span>
+                    </div>
+                </div>
+
+                
+            </div>
+            
+
+            <div class="summary">
+                <div class="price-sum" id="priceSum"></div>
+            </div>
+                
+            </div>
+        </div>
+    </div>
+
+
+    <div class="checkout l-container" id="nextCont">
+        <a href="checkout.html"><div class="item-btn" id="next" onclick="checkItems();">Till betalning...</div></a>
+    </div>
+
+
+    <div class="container filler2">
+
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <h3>PCThrill</h3>
+            <p>Beställ och hitta de billigaste produkterna vid högsta kvalité på PCThrill</p>
+            <ul class="socials">
+                <li><a href="https://www.facebook.com/"><i class="fab fa-facebook fa-2x whiteiconcolor"></i></a></li>
+                <li><a href="https://www.instagram.com/"><i class="fab fa-instagram fa-2x whiteiconcolor"></i></a></li>
+                <li><a href="https://twitter.com/"><i class="fab fa-twitter fa-2x whiteiconcolor"></i></a></li>
+                <li><a href="https://www.youtube.com/"><i class="fab fa-youtube fa-2x whiteiconcolor"></i></a></li>
+             </ul>
+             <div class="footer-menu">
+                <ul class="f-menu">
+                   <li><a href="index.html">Hem</a></li>
+                   <li><a href="products.html">Produkter</a></li>
+                   <li><a href="contact.html">Support</a></li>
+                   <li><a href="login.html">Konto</a></li>
+                </ul>
+               </div>
+        </div>
+    </footer>
+
+</main>
+
+
+    <script src="script.js"></script>
+
+    <script type="text/javascript"> // scannar igenom alla produkter och lägger in dem i kundvagnen även ifall de inte än finns
+        
+        const productContent = sessionStorage.getItem("productContent1");
+        const productContent2 = sessionStorage.getItem("productContent2");
+        const productContent3 = sessionStorage.getItem("productContent3");
+        const productContent4 = sessionStorage.getItem("productContent4");
+        const productContent5 = sessionStorage.getItem("productContent5");
+        const productContent6 = sessionStorage.getItem("productContent6");
+        const productContent7 = sessionStorage.getItem("productContent7");
+        const productContent8 = sessionStorage.getItem("productContent8");
+
+        const container = document.querySelector("#products");
+
+        container.innerHTML = productContent + productContent2 + productContent3 + productContent4 + productContent5 + productContent6 + productContent7 + productContent8
+
+    </script>
+
+    <script type="text/javascript"> // js för att räkna ut pris summan
+        
+    </script>
+
+    <script type="text/javascript"> // js för att räkna ut det totala priset på en produkt ifall antalet är över 1
+    const products = document.querySelectorAll('.product');
+
+    // loopar igenom varje produkt
+    products.forEach(function(product) {
+    const priceValue = product.querySelector('.product-price').innerHTML;
+    const valueInput = product.querySelector('.amounts').innerHTML;
+    const total = product.querySelector('.total-price');
+
+    let totalSum = priceValue * valueInput;
+    total.textContent = `${totalSum} kr`;
+    console.log(totalSum);
+
+    });
+
+    const totalPrice = document.querySelectorAll('.total-price'); // priset blir klass div's innehåll
+        let sum = 0;
+        totalPrice.forEach(div => { // checkar igenom varje produkt pris div och lägger till antalet till summan
+            sum += parseInt(div.innerHTML);
+        });
+        const priceSum = document.querySelector('.price-sum');
+        sessionStorage.setItem("total", sum); // sparar värdet med hjälp av sessionstorage api
+        priceSum.innerHTML = `Totalt: ${sum} kr`; // displayar summan i en bestämd klass div
+
+        var nextButton = document.getElementById("next");
+        var nextContainer = document.getElementById("nextCont");
+
+        if (sum === 0) {
+            nextContainer.classList.add("hide3");
+        };
+
+    </script>
+
+
+<script  src="https://code.jquery.com/jquery-3.6.3.js"integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+
+
+    <script type="text/javascript"> // Funktion för att ta bort produkter
+        function removeProduct(el){
+            var element = el;
+            element.remove();
+        }
+
+    </script>
+
+<script type="text/javascript">
+    var containRem = document.getElementById("products");
+    containRem.innerHTML = containRem.innerHTML.replace(/null/g, ""); // tar bort alla "null" texter
+    containRem.innerHTML = containRem.innerHTML.replace("0", ""); // tar bort den första 0'an som egentligen är en existerande productContents som inte visas för användaren
+</script>
+
+<script src="accountCheck.js"></script>
+
+
+
+    
+    
+
+</body>
+</html>

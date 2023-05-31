@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/utilities.css">
+    <link rel="icon" href="images/logo.svg">
+    <script src="https://kit.fontawesome.com/eaa7bdffa7.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+    <script src="https://kit.fontawesome.com/eaa7bdffa7.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script> <!-- installerar jquery så att +- countern ska fungera med js -->
+    <title>PCThrill</title>
+</head>
+<body id="site">
+
+    <nav>
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+            <i onclick="toggleScroll()" class="fa-solid fa-bars"></i>
+        </label>
+        <label class="logo"><a href="index.html"><img src="images/logo.svg" alt=""></a></label>
+        <ul class="dropmenu">
+                <li><a href="index.html">Hem</a></li>
+                <li><a href="products.html">Produkter</a></li>
+                <li><a href="cart.html">Kundvagn</a></li>
+                <li><a href="contact.html">Support</a></li>
+                <li id="favhide"><a href="favorites.html" class="toggletab hidetab">Favoriter</a></li>
+                <li><a href="login.html" id="accountTab"><i class="fa-regular fa-user"></i> Konto</a></li>
+        </ul>
+    </nav>
+
+    <div class="banner">
+        <div class="l-container grid">
+            <div class="1">
+                <h1>PCThrill</h1>
+                <div class="subrub">Webshop</div>
+                <span>Beställ och hitta de billigaste produkterna vid högsta kvalité på PCThrill</span>
+                <div class="py-2">
+                    <a href="products.html">Mer...</a>
+                    <a href="products.html">Utforska...</a>
+                </div>
+            </div>
+            <div class="2"></div>
+        </div>
+    </div>
+
+    
+    <div class="l-container">
+        <div class="grid-container vertical p-1 grid-7 o-x customScroll">
+            <div class="card p-1 item-showcase">
+                <img src="images/sony1.png" alt="">
+                <h3>Sony WH-1000XM4</h3>
+                <div class="sub">
+                    Hörlurar / Gaming / Sony
+                </div>
+                <div class="sub">Art. Nr 829102</div>
+                <div class="item-sale">3290:-</div>
+                <div class="item-price">2499:-</div>
+                <a href="produkter/sony_headphone.html"><div class="item-btn">Visa</div></a>
+            </div>
+            <div class="card p-1 item-showcase">
+                <img src="images/gprodisplay.png" alt="">
+                <h3>G Pro X Superlight</h3>
+                <div class="sub">
+                    Mus / Gaming / Logitech
+                </div>
+                <div class="sub">Art. Nr 829102</div>
+                <div class="item-sale">1299:-</div>
+                <div class="item-price">599:-</div>
+                <a href="produkter/logitech_mouse.html"><div class="item-btn">Visa</div></a>
+            </div>
+            <div class="card p-1 item-showcase">
+                <img src="images/apexprotkldisplay.png" alt="">
+                <h3>Apex Pro TKL 2023</h3>
+                <div class="sub">
+                    Tangentbord / Steelseries
+                </div>
+                <div class="sub">Art. Nr 829102</div>
+                <div class="item-sale">3499:-</div>
+                <div class="item-price">2399:-</div>
+                <a href="produkter/apexprotkl.html"><div class="item-btn">Visa</div></a>
+            </div>
+            <div class="card p-1 item-showcase">
+                <img src="images/iphonedisplay2.png" alt="">
+                <h3>iPhone 13 128GB</h3>
+                <div class="sub">
+                    Mobil / Apple
+                </div>
+                <div class="sub">Art. Nr 829102</div>
+                <div class="item-sale">8990:-</div>
+                <div class="item-price">7699:-</div>
+                <a href="produkter/iphone.html"><div class="item-btn">Visa</div></a>
+            </div>
+            <div class="card p-1 item-showcase">
+                <img src="images/laptopdisplay.png" alt="">
+                <h3>Thinkbook 15 G2</h3>
+                <div class="sub">
+                    Laptop / Lenovo
+                </div>
+                <div class="sub">Art. Nr 829102</div>
+                <div class="item-sale">7499:-</div>
+                <div class="item-price">5699:-</div>
+                <a href="produkter/laptop.html"><div class="item-btn">Visa</div></a>
+            </div>
+            <div class="card p-1 item-showcase">
+                <img src="images/usb.png" alt="">
+                <h3>1m USB-C Kabel</h3>
+                <div class="sub">
+                    USB-Kabel / Prokord
+                </div>
+                <div class="sub">Art. Nr 829102</div>
+                <div class="item-sale">249:-</div>
+                <div class="item-price">156:-</div>
+                <a href="produkter/usb.html"><div class="item-btn">Visa</div></a>
+            </div>
+            <div class="card p-1 item-showcase">
+                <img src="images/routerdisplay.png" alt="">
+                <h3>ASUS 4G-AC86U</h3>
+                <div class="sub">
+                    Router / Nätverk
+                </div>
+                <div class="sub">Art. Nr 829102</div>
+                <div class="item-sale">2490:-</div>
+                <div class="item-price">2095:-</div>
+                <a href="produkter/router.html"><div class="item-btn">Visa</div></a>
+            </div>
+        </div>
+    </div>
+
+    <article>
+        <div class="grid-container cart-header art3">
+            <div class="l-container grid grid-3">
+                <li><i class="fa-solid fa-truck"></i><br>Fri frakt från 399:-</li>
+                <li><i class="fa-regular fa-clock"></i><br>Leverans inom 1-2 dagar</li>
+                <li><i class="fa-solid fa-arrow-left"></i><br>30 dagars öppet köpt</li>
+            </div>
+        </div>
+    </article>
+
+    <div class="l-container display-cards">
+        <div class="grid grid1">
+            <div class="card">
+                <div class="grid">
+                    <span>
+                        Gör dig redo för sommaren! <br> <a href="products.html"><button class="b1">Utforska<i class="fa-solid fa-arrow-right"></i></button></a>
+                    </span>
+                    <div class="bg3"></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="grid">
+                    <span>
+                        Sänkta priser på alla hörlurar till 31/5. <br> <a href="kategorier/audio.html"><button class="b2">Utforska<i class="fa-solid fa-arrow-right"></i></button></a>
+                    </span>
+                    <div class="bg4"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="l-container index-container index-swiper">
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+
+                <div class="swiper-slide">
+                    <a href="produkter/sony_headphone.html"><img src="images/sony1.png" alt=""></a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="produkter/apexprotkl.html"><img src="images/apexprotkldisplay.png" alt=""></a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="produkter/router.html"><img src="images/routerdisplay.png" alt=""></a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="produkter/iphone.html"><img src="images/iphonedisplay.png" alt=""></a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="produkter/logitech_mouse.html"><img src="images/gprodisplay2.png" alt=""></a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="produkter/usb.html"><img src="images/usb.png" alt=""></a>
+                </div>
+                <div class="swiper-slide">
+                    <img src="images/circlehomeplus.png" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <a href="produkter/laptop.html"><img src="images/laptopdisplay.png" alt=""></a>
+                </div>
+                <div class="swiper-slide">
+                    <img src="images/samsung.png" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="images/chromebook.png" alt="">
+                </div>
+            </div>
+            <div class="slider-btns">
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="display-card-1">
+        <div class="l-container display-cards">
+            <div class="card">
+                <div class="grid">
+                    <span>
+                        Uppgradera ditt kontor med dem nyaste prylarna från PCThrill <br> <a href="products.html"><button class="b1">Utforska<i class="fa-solid fa-arrow-right"></i></button></a>
+                    </span>
+                    <div class="bg2"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+
+
+    <footer>
+        <div class="footer-content">
+            <h3>PCThrill</h3>
+            <p>Beställ och hitta de billigaste produkterna vid högsta kvalité på PCThrill</p>
+            <ul class="socials">
+                <li><a href="https://www.facebook.com/"><i class="fab fa-facebook fa-2x whiteiconcolor"></i></a></li>
+                <li><a href="https://www.instagram.com/"><i class="fab fa-instagram fa-2x whiteiconcolor"></i></a></li>
+                <li><a href="https://twitter.com/"><i class="fab fa-twitter fa-2x whiteiconcolor"></i></a></li>
+                <li><a href="https://www.youtube.com/"><i class="fab fa-youtube fa-2x whiteiconcolor"></i></a></li>
+             </ul>
+             <div class="footer-menu">
+                <ul class="f-menu">
+                   <li><a href="index.html">Hem</a></li>
+                   <li><a href="products.html">Produkter</a></li>
+                   <li><a href="contact.html">Support</a></li>
+                   <li><a href="login.html">Konto</a></li>
+                </ul>
+               </div>
+        </div>
+    </footer>
+
+</main>
+
+
+    <script src="script.js"></script>
+    <script  src="https://code.jquery.com/jquery-3.6.3.js"integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script> <!--Js Swipe funktion för artikelbilderna-->
+    <script tpe="text/javascript"> // används för image slidern
+        $('.s-checkbox').on('change', function(){
+    $('.s-checkbox').not(this).prop('checked',false)
+});
+
+var swiper = new Swiper(".mySwiper", {
+      slidesPerView: 1,
+      spaceBetween: 10,
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    
+      breakpoints: {
+        400: { 
+          slidesPerView: 1,
+          spaceBetween: 0,
+        },
+        580: { 
+          slidesPerView: 2,
+          spaceBetween: 0,
+        },
+        870: { 
+          slidesPerView: 3,
+          spaceBetween: 0,
+        },
+        1080: { 
+          slidesPerView: 4,
+          spaceBetween: 0,
+        },
+        1285: { //aktiv innan 1285px screen width
+          slidesPerView: 4,
+          spaceBetween: 0,
+        }
+      
+      },
+    });
+    </script>
+
+    <script src="accountCheck.js"></script>
+    
+
+</body>
+</html>

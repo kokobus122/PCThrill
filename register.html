@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/utilities.css">
+    <link rel="stylesheet" href="css/bg.css">
+    <link rel="stylesheet" href="css/flex.css">
+    <link rel="icon" href="images/logo.svg">
+    <script src="https://kit.fontawesome.com/eaa7bdffa7.js" crossorigin="anonymous"></script>
+    <title>PCThrill</title>
+</head>
+<body>
+
+    <div class="alert2 hide" id="errorAlert">
+        <span class="fas fa-exclamation-circle"></span>
+        <span class="msg">Error! Kunde inte skapa konto</span>
+        <span class="close-btn" onclick="removeAlert()">
+            <span class="fas fa-times"></span>
+        </span>
+    </div>
+
+
+    <div class="login-container">
+        <div class="login">
+            <div class="login-header">
+                <h1>
+                    <a href="index.html"><img src="images/logo.svg" alt=""></a>
+                </h1>
+            </div>
+            <div class="box">
+                <h1 class="title">Registrera dig</h1>
+                <label for="mail">Mailadress</label><br>
+                <input class="" type="text" name="mail" id="mail"><br>
+                <label for="password">Lösenord</label><br>
+                <input type="text" name="password" id="password" type="password">
+                <a href="#" onclick="registerAccount();"><div class="login-btn">Skapa konto</div></a>
+                <hr>
+                <h1 class="title">Har du redan ett konto?</h1>
+                <a href="login.html"><div class="register-btn">Logga in</div></a>
+            </div>
+        </div>
+    </div>
+
+
+
+  
+
+
+
+</main>
+
+
+    <script src="script.js"></script>
+    <script type="text/javascript">
+
+        function registerAccount(){
+            sessionStorage.setItem("account", "ExistingAccount")
+            sessionStorage.setItem("accountLogin", "existingLogin");
+
+            var accountMail = document.getElementById("mail").value;
+            var accountPassword = document.getElementById("password").value;
+            var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/; // mail validation som följer standard formatet för mail
+
+            if (accountMail === "" || accountPassword === ""){
+                var errorNoti = document.getElementById("errorAlert");
+                errorNoti.classList.remove("hide");
+            } else if (accountMail.match(mailformat)){
+                sessionStorage.setItem("mail", accountMail);
+                sessionStorage.setItem("password", accountPassword);
+                window.location.href = "index.html";
+            } else {
+                var errorNoti = document.getElementById("errorAlert");
+                errorNoti.classList.remove("hide");
+            }
+        };
+
+        function removeAlert(){
+            var errorNoti = document.getElementById("errorAlert");
+
+            errorNoti.classList.add("hide");
+            errorNoti.classList.remove("show");
+        }
+    </script>
+    
+
+</body>
+</html>

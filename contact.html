@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/utilities.css">
+    <link rel="icon" href="images/logo.svg">
+    <script src="https://kit.fontawesome.com/eaa7bdffa7.js" crossorigin="anonymous"></script>
+    <title>PCThrill</title>
+</head>
+<body>
+
+    <nav>
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+            <i onclick="toggleScroll()" class="fa-solid fa-bars"></i>
+        </label>
+        <label class="logo"><a href="index.html"><img src="images/logo.svg" alt=""></a></label>
+        <ul class="dropmenu">
+                <li><a href="index.html">Hem</a></li>
+                <li><a href="products.html">Produkter</a></li>
+                <li><a href="cart.html">Kundvagn</a></li>
+                <li><a href="contact.html">Support</a></li>
+                <li id="favhide"><a href="favorites.html" class="toggletab hidetab">Favoriter</a></li>
+                <li><a href="login.html" id="accountTab"><i class="fa-regular fa-user"></i> Konto</a></li>
+        </ul>
+    </nav>
+
+    <div class="l-container questions">
+            <header class="p-1 md">Support</header>
+
+        <div class="grid grid-4 question-card">
+            <a href="questions/bestallning.html"><div class="q-card"><i class="fa-solid fa-cart-shopping fa-3x"></i> <br>
+                Beställning
+            </div></a>
+            <a href="questions/returnering.html"><div class="q-card"><i class="fa-regular fa-folder-open fa-3x"></i> <br>
+                Returnering
+            </div></a>
+            <a href="questions/betalning.html"><div class="q-card"><i class="fa-regular fa-credit-card fa-3x"></i> <br>
+                Betalning
+            </div></a>
+            <a href="questions/konto.html"><div class="q-card"><i class="fa-regular fa-user fa-3x"></i> <br>
+                Konto
+            </div></a>
+        </div>
+
+        <header class="p-1 md">Vanliga Frågor</header>
+
+        <div class="main3">
+            <button class="accordion">Hur lång är leveranstiden?</button>
+            <div class="panel">
+                <div class="grid">
+                    <div class="1">
+                        <h3>Lorem</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod nobis obcaecati impedit accusamus numquam ea ut nisi eaque dolorum laborum!</p>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod nobis obcaecati impedit accusamus numquam ea ut nisi eaque dolorum laborum!</p>
+                </div>
+            </div>
+
+            <button class="accordion">Vad gör jag om min produkt inte fungerar?</button>
+            <div class="panel">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod nobis obcaecati impedit accusamus numquam ea ut nisi eaque dolorum laborum!</p>
+            </div>
+
+            <button class="accordion bottom">Hur returnerar jag en produkt?</button>
+            <div class="panel">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod nobis obcaecati impedit accusamus numquam ea ut nisi eaque dolorum laborum!</p>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+    <footer class="footer2">
+        <div class="footer-content">
+            <h3>PCThrill</h3>
+            <p>Beställ och hitta de billigaste produkterna vid högsta kvalité på PCThrill</p>
+            <ul class="socials">
+                <li><a href="https://www.facebook.com/"><i class="fab fa-facebook fa-2x whiteiconcolor"></i></a></li>
+                <li><a href="https://www.instagram.com/"><i class="fab fa-instagram fa-2x whiteiconcolor"></i></a></li>
+                <li><a href="https://twitter.com/"><i class="fab fa-twitter fa-2x whiteiconcolor"></i></a></li>
+                <li><a href="https://www.youtube.com/"><i class="fab fa-youtube fa-2x whiteiconcolor"></i></a></li>
+             </ul>
+             <div class="footer-menu">
+                <ul class="f-menu">
+                   <li><a href="index.html">Hem</a></li>
+                   <li><a href="products.html">Produkter</a></li>
+                   <li><a href="contact.html">Support</a></li>
+                   <li><a href="login.html">Konto</a></li>
+                </ul>
+               </div>
+        </div>
+    </footer>
+
+</main>
+
+
+    <script src="script.js"></script>
+    <script src="accountCheck.js"></script>
+    <script src="js/accordion.js"></script>
+    
+
+</body>
+</html>
