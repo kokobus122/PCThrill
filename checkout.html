@@ -130,9 +130,11 @@
         <div class="l-container contact grid grid-third">
             <section class="contact-form">
                 <div class="box grid">
-                    <label for="name">Förnamn</label>
-                    <label for="name">Efternamn</label>
+                    <label class="pc" for="name">Förnamn</label>
+                    <label class="pc" for="name">Efternamn</label>
+                    <label class="mobile" for="name">Förnamn</label>
                     <input class="" type="text" name="name" placeholder="Förnamn">
+                    <label class="mobile" for="name">Efternamn</label>
                     <input class="" type="text" name="surname" placeholder="Efternamn">
                 </div>
                 <div class="box grid grid-1">
@@ -140,24 +142,32 @@
                     <input class="" type="text" name="adress" placeholder="Adress">
                 </div>
                 <div class="box grid">
-                    <label for="postnummer">Postnummer</label>
-                    <label for="ort">Ort</label>
+                    <label class="pc" for="postnummer">Postnummer</label>
+                    <label class="pc" for="ort">Ort</label>
+                    <label class="mobile" for="postnummer">Postnummer</label>
                     <input class="" type="text" name="postnummer" placeholder="Postnummer">
+                    <label class="mobile" for="ort">Ort</label>
                     <input class="" type="text" name="ort" placeholder="Ort">
-                    <label for="telephone">Mobilnummer</label>
-                    <label for="mail">Mailadress</label>
+                    <label class="pc" for="telephone">Mobilnummer</label>
+                    <label class="pc" for="mail">Mailadress</label>
+                    <label class="mobile" for="telephone">Mobilnummer</label>
                     <input class="" type="number" name="telephone" placeholder="Mobilnummer">
+                    <label class="mobile" for="mail">Mailadress</label>
                     <input class="" type="text" name="mail" placeholder="Email (example@example.com)" id="mail">
                 </div>
                 <div class="box grid cardpayment hidee" id="cardBox">
                     <h3>Kortbetalning</h3><br>
-                    <label for="kortnamn">Kortnamn</label>
-                    <label for="kortnummer">Kortnummer</label>
+                    <label class="pc" for="kortnamn">Kortnamn</label>
+                    <label class="pc" for="kortnummer">Kortnummer</label>
+                    <label class="mobile" for="kortnamn">Kortnamn</label>
                     <input class="" type="text" name="kortnamn" placeholder="Benny Karlsson">
+                    <label class="mobile" for="kortnummer">Kortnummer</label>
                     <input class="" type="number" name="kortnummer" placeholder="1111-2222-3333-4444" max="19" maxlength="19">
-                    <label for="giltighetstid">Giltighetstid</label>
-                    <label for="cvv">CVV</label>
+                    <label class="pc" for="giltighetstid">Giltighetstid</label>
+                    <label class="pc" for="cvv">CVV</label>
+                    <label class="mobile" for="giltighetstid">Giltighetstid</label>
                     <input class="" type="number" name="giltighetstid" placeholder="03/18" max="4">
+                    <label class="mobile" for="cvv">CVV</label>
                     <input class="" type="number" name="cvv" placeholder="578" max="3">
                 </div>
                 <button class="btn btn-primary" type="submit" name="submit" onclick="submit();" id="confirm">
