@@ -1720,7 +1720,7 @@ nav .dropmenu li a {
   }
   .grid-inspect .btn {
     max-height: 46px;
-    font-size: 1rem;
+    font-size: 0.8rem;
   }
 }
 @media (min-width: 1120px) {
